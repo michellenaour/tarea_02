@@ -8,6 +8,7 @@ public class tarea_02 {
     static Scanner teclado = new Scanner(System.in);
 
     public static void main(String[] args) {
+        System.out.println("---------Bienvenido al registro de Sismos---------\n\n");
         int l = recibirNro("Ingrese el número de días que incluirá este registro.", 1, 31);
         double[][] registro = crearMatriz(l);
         llenarMatriz(registro);
@@ -108,7 +109,7 @@ public class tarea_02 {
         int nro = 0;
         boolean flag = false;
         while (flag == false) {
-            nro = leerNro("    " + txt);
+            nro = leerNro( txt);
             flag = validarNro(nro, min, max);
             if (flag == false) {
                 System.out.println("Error, ingrese un número entre " + min + " y " + max);
@@ -121,16 +122,18 @@ public class tarea_02 {
         System.out.println("---------------Menú---------------");
         System.out.println(" ( 1 )  Mostrar sismo mas intenso.");
         System.out.println(" ( 2 )  Mostrar número de sismos mayores a 4.0 grados Richter");
-        System.out.println(" ( 3 )  Salir. ");
+        System.out.println(" ( 3 )  Salir. \n");
 
     }
 
     public static void mostrarMatriz(double[][] matriz) {
+
         for (int x = 0; x < matriz.length; x++) {
+            System.out.print("día "+x);
             for (int y = 0; y < matriz[x].length; y++) {
-                System.out.print(" [" + String.format("%.1f",matriz[x][y]) + "] ");
+                System.out.print(" [" + String.format("%.1f",matriz[x][y]) + "]  ");
             }
-            System.out.println(" ");
+            System.out.println("");
         }
     }
 
