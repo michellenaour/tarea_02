@@ -15,13 +15,17 @@ public class tarea_02Test {
     @Test
     public void mayorSismo() {
         double expected1=4.6;
+        double expected2=4.5;
         assertEquals(expected1, tarea_02.mayorSismo(datosTesting), 0);
-
+        assertEquals(expected2, tarea_02.mayorSismo(datosTesting), 0);
     }
 
     @Test
     public void contarSismos() {
-        int expected1=3;
+        int expected1=16;
+        int expected2=5;
+        assertEquals(expected1,tarea_02.contarSismos(datosTesting));
+        assertEquals(expected2,tarea_02.contarSismos(datosTesting));
 
     }
 }
